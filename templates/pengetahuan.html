@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Sistem Pakar Metode CF (Certainty Factor)</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Georgia, Times New Roman, Times, serif;
+	font-size: 13px;
+	color: #333333;
+}
+.style1 {
+	color: #000099;
+	font-size: 24px;
+}
+a:link {
+	text-decoration: none;
+	color: #333333;
+}
+a:visited {
+	text-decoration: none;
+	color: #333333;
+}
+a:hover {
+	text-decoration: underline;
+	color: #FF0000;
+}
+a:active {
+	text-decoration: none;
+	color: #333333;
+}
+.style2 {font-weight: bold}
+-->
+</style></head>
+
+<body>
+<table width="1000" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#000099">
+  <tr>
+    <td height="50" bgcolor="#FFFFFF"><span class="style1">Sistem Pakar Diagnosa Penyakit Kucing</span></td>
+  </tr>
+  <tr>
+    <td height="35" bgcolor="#FFFFFF"><span class="style2"><a href="admin">Home</a> | <a href="penyakit">Penyakit</a> | <a href="gejala">Gejala </a>| <a href="pengetahuan">Pengetahuan</a> | <a href="ganti-password">Ganti Password</a> | <a href="logout">Logout</a> | Anda Login Sebagai : <?php echo $_SESSION['userlogin']; ?></span></td>
+  </tr>
+  <tr>
+    <td align="center" valign="top" bgcolor="#FFFFFF"><br />
+      <strong>Data Pengetahuan</strong><br />
+      <br />
+      <table width="978" border="0" cellpadding="5" cellspacing="1" bgcolor="#000099">
+        <tr>
+          <td width="124" bgcolor="#FFFFFF">ID Pengetahuan</td>
+          <td width="260" bgcolor="#FFFFFF">Nama Penyakit</td>
+          <td width="221" bgcolor="#FFFFFF">Nama Gejala</td>
+          <td width="135" bgcolor="#FFFFFF">MB</td>
+          <td width="111" bgcolor="#FFFFFF">MD</td>
+          <td width="73" bgcolor="#FFFFFF"><a href="add-pengetahuan">Add</a></td>
+        </tr>
+        {% for row in data %}
+        <tr>
+          <td bgcolor="#FFFFFF">{{ row[0] }}</td>
+          <td bgcolor="#FFFFFF">{{ row[5] }}</td>
+          <td bgcolor="#FFFFFF">{{ row[6] }}</td>
+          <td bgcolor="#FFFFFF">{{ row[3] }}</td>
+          <td bgcolor="#FFFFFF">{{ row[4] }}</td>
+          <td bgcolor="#FFFFFF"><a href="edit-pengetahuan?id_pengetahuan={{ row[0] }}">Edit</a> <a href="del-pengetahuan?id_pengetahuan={{ row[0] }}">Del</a></td>
+        </tr>
+        {% endfor %}
+      </table>
+      <br />
+    <br /></td>
+  </tr>
+  <tr>
+    <td bgcolor="#FFFFFF"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="47%" height="35" align="left"><strong></strong></td>
+        <td width="53%" height="35" align="right"><strong><a href="" target="_blank">Kontak</a> | <a href="" target="_blank">About</a></strong></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+</body>
+</html>
